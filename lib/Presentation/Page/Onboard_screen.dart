@@ -1,29 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:travel_app/core/router/app_route.dart';
-import 'package:go_router/go_router.dart';
+import 'package:travel_app/Core/Rounting/App_route.dart';
 
-class ScreenIntroduction extends StatefulWidget {
-  const ScreenIntroduction({super.key});
+class OnboardScreen extends StatefulWidget {
+  const OnboardScreen({super.key});
 
   @override
-  State<ScreenIntroduction> createState() => _ScreenIntroductionState();
+  State<OnboardScreen> createState() => _OnboardScreenState();
 }
 
-class _ScreenIntroductionState extends State<ScreenIntroduction> {
+class _OnboardScreenState extends State<OnboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: IntroductionScreen(
+      // showSkipButton: true,
+      // showNextButton: false,
+      // skip: Text(
+      //   "skip",
+      //   style: GoogleFonts.poppins(
+      //       textStyle: TextStyle(
+      //     color: Colors.white,
+      //   )),
+      // ),
+      // done: Text(
+      //   "Done",
+      //   style: GoogleFonts.poppins(
+      //       textStyle: TextStyle(
+      //     color: Colors.white,
+      //   )),
+      // ),
+      // dotsDecorator: DotsDecorator(
+      //   color: Colors.white,
+      //   activeColor: Colors.yellow,
+      // ),
+      // onDone: () {
+      //   // On button pressed
+      // },
       showSkipButton: true,
       skip: const Text("Skip", style: TextStyle(color: Colors.white)),
       next: const Text("Next", style: TextStyle(color: Colors.white)),
       done: const Text("Done",
           style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white)),
-      onDone: () => context.goNamed(Routes.home),
-      onSkip: () => context.goNamed(Routes.home),
+      onDone: () => context.goNamed(Routes.login),
+      onSkip: () => context.goNamed(Routes.login),
       dotsDecorator: DotsDecorator(
         size: const Size.square(10.0),
         activeSize: const Size(50.0, 10.0),
@@ -46,7 +68,7 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/image/white-traver.png",
+                    "assets/img/white-traver.png",
                     width: 200,
                   ),
                   Text(
@@ -83,19 +105,23 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/image/page1.jpg"),
+                      image: AssetImage("assets/img/page1.jpg"),
                       fit: BoxFit.cover),
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black54],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter),
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                    stops: [0.7, 1],
+                  ),
                 ),
-              ),
+              )
             ])),
         PageViewModel(
             title: "",
@@ -109,7 +135,7 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/image/white-traver.png",
+                    "assets/img/white-traver.png",
                     width: 200,
                   ),
                   Text(
@@ -146,19 +172,23 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/image/page2.jpg"),
+                      image: AssetImage("assets/img/page2.jpg"),
                       fit: BoxFit.cover),
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black54],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter),
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                    stops: [0.7, 1],
+                  ),
                 ),
-              ),
+              )
             ])),
         PageViewModel(
             title: "",
@@ -172,7 +202,7 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/image/white-traver.png",
+                    "assets/img/white-traver.png",
                     width: 200,
                   ),
                   Text(
@@ -209,19 +239,23 @@ class _ScreenIntroductionState extends State<ScreenIntroduction> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/image/page3.jpg"),
+                      image: AssetImage("assets/img/page3.jpg"),
                       fit: BoxFit.cover),
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black54],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter),
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                    stops: [0.7, 1],
+                  ),
                 ),
-              ),
+              )
             ]))
       ],
     ));
